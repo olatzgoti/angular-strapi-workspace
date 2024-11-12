@@ -1,0 +1,12 @@
+<!-- <app-home></app-home> -->
+
+<div *ngFor='let film of films'>
+  <h2 class='list-title'>{{ film.title }}</h2>
+  <p class='list-description'>{{ film.description }}</p>
+
+  <div class="pic" *ngFor='let img of film.image'>
+    <img src="http://localhost:1337{{ img.url }}"
+    alt="Imagen de  character.title ">
+
+
+</div>

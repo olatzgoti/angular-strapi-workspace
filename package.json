@@ -2,7 +2,21 @@
   "name": "@angular-strapi-workspace/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "nx": "nx",
+    "strapi": "cd packages/cms && strapi",
+    "docker:start": "docker compose --env-file ./docker/.env --file ./docker/docker-compose.yml up",
+    "docker:stop": "docker compose --env-file ./docker/.env --file ./docker/docker-compose.yml down",
+    "cms:start": "nx develop cms",
+    "cms:build": "nx build cms",
+    "cms:export": "cd packages/cms && npm run strapi export -- -f backend-export --key export && cd ../..",
+    "cms:import": "cd packages/cms && npm run strapi import -- -f backend-export.tar.gz.enc --key export && cd ../..",
+    "cms:extract-config": "nx run cms:extract-config",
+    "cms:restore-config": "nx run cms:restore-config",
+    "cms:generate-types": "nx run cms:generate-lib-model",
+    "frontend:start": "nx serve frontend",
+    "frontend:test": "nx test frontend"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~18.2.0",

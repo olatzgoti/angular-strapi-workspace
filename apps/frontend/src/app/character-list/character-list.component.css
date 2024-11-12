@@ -1,0 +1,19 @@
+*{
+
+}
+div.data{
+  width:30%;
+  border: 2px solid red;
+
+}
+.pic{
+  width: 60%;
+
+  }
+
+  img{
+
+    width:100%;
+    height: 100%;
+
+  }
