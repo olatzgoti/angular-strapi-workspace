@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  mysql:
+    # ${NAME} se obtiene del .env de la raíz del proyecto.
+    hostname: ${NAME}-mysql
+    container_name: ${NAME}-mysql
+    # Versión exacta que se va a usar. IMPORTANTE indicarla.
+    image: mysql:8.0.35-debian
+    command: --default-authentication-plugin=caching_sha2_password --sort_buffer_size=512kb
+    # El environment: lo carga del .env directamente
+    # El build: lo carga del .env directamente
+    volumes:
+      - ./volumes/init:/docker-entrypoint-initdb.d
+      - ./volumes/mysql:/var/lib/mysql
+      - ./docker/mysql.cnf:/etc/mysql/conf.d/utf8.cnf
+    env_file:
+      - .env
+    # cap_add es necesario para evitar un error constante en el docker logs
+    # cap_add:
+    # - SYS_NICE
+    ports:
+      # El la parte izquierda debería variar en cada proyecto, la parte derecha SIEMPRE esa.
+      - "${MYSQL_PORT}:3306"
+  smtp:
+    hostname: ${NAME}-smtp
+    container_name: ${NAME}-smtp
+    image: axllent/mailpit:v1.9
+    ports:
+      - ${STMP_PORT_WEB}:8025
+      - ${STMP_PORT_SMTP}:1025
