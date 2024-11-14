@@ -1,12 +1,14 @@
-<!-- <app-home></app-home> -->
+ <app-header></app-header>
 
-<div *ngFor='let film of films'>
-  <h2 class='list-title'>{{ film.title }}</h2>
-  <p class='list-description'>{{ film.description }}</p>
+<div class='film-list-container'>
 
-  <div class="pic" *ngFor='let img of film.image'>
-    <img src="http://localhost:1337{{ img.url }}"
-    alt="Imagen de  character.title ">
-
-
+  <div class='film-card' *ngFor='let film of films'>
+    <h2 class='list-title'>{{ film.title }}</h2>
+    <p class='list-description'> Id: {{ film.documentId }}</p>
+    <p class="release-date">Estreno: {{ film.date }}</p>
+    <div class="pic" *ngFor='let img of film.image'>
+      <img src="http://localhost:1337{{ img.url }}"
+      alt="Imagen de  character.title ">
+    </div>
+    </div>
 </div>

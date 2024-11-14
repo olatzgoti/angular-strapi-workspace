@@ -9,20 +9,8 @@ import { RouterModule } from '@angular/router';
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, HeaderComponent, RouterModule],
-  template:`<app-header></app-header>
+  templateUrl:'./home.component.html',
 
-  <article>
-  <section>
-  <p>Home component: Finally available for you</p>
-
-  <router-outlet></router-outlet>
-
-  <section class ='home'>
-
-  </section>
-  </section>
-  </article>`,
-  //'./home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {

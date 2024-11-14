@@ -1,4 +1,8 @@
-/* // Variables de color (ajústalas según el tema)
+h1{
+
+color: blueviolet;
+text-decoration: underline;
+}
 $primary-color: #e92f48;
 $primary-color-dark: darken($primary-color, 10%);
 $primary-color-light: lighten($primary-color, 10%);
@@ -53,4 +57,3 @@ nav {
   font-weight: bold;
   color: #333;
 }
- */

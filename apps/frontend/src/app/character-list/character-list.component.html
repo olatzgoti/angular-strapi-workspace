@@ -1,12 +1,15 @@
-<!-- <app-home></app-home> -->
+<app-header></app-header>
 
-<div class='data' *ngFor='let character of characters'>
-  <h2 class='list-title'>{{ character.name }}</h2>
-  <p class='list-description'>{{ character.description }}</p>
+<div class="film-list-container">
 
- <div class="pic" *ngFor='let char of character.image'>
-    <img src="http://localhost:1337{{ char.url }}"
-    alt="Imagen de  character.title ">
+  <div class='film-card' *ngFor='let character of characters'>
+    <h2 class='list-title'>{{ character.name }}</h2>
+    <p class='list-description'>{{ character.description }}</p>
 
-
+    <div class="pic" *ngFor='let char of character.image'>
+      <img src="http://localhost:1337{{ char.url }}"
+      alt="Imagen de  character.title ">
+    </div>
+  </div>
 </div>
+

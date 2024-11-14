@@ -1,0 +1,72 @@
+// Variables de color y tamaño
+$background-color: #f9f9f9;
+$border-color: #ddd;
+$text-color: #333;
+$title-color: #3498db;
+$padding: 1rem;
+$border-radius: 8px;
+$shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$gap: 1.5rem;
+
+// Estilos para el contenedor general de tarjetas
+.film-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+  justify-content: center;
+}
+
+// Estilos para cada tarjeta
+.film-card {
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  padding: $padding;
+  width: 300px; // Ajusta el ancho de cada tarjeta
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .list-title {
+    color: $title-color;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+
+  .list-description,
+  .release-date {
+    color: $text-color;
+    font-size: 1rem;
+    margin: 0.25rem 0;
+  }
+
+  .pic {
+    margin-top: 1rem;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: $border-radius;
+    }
+  }
+}
+/*
+div{
+  width: 30%;
+  border: 2px solid purple;
+}
+
+.pic{
+width: 60%;
+}
+
+img{
+  width:100%;
+  height: 100%;
+
+}
+ */

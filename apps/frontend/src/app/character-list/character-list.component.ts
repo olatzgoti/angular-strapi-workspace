@@ -2,13 +2,15 @@ import { CommonModule } from "@angular/common";
 import { Component, OnInit, inject } from "@angular/core"
 import { DataService } from "../services/data.service";
 import { CharactersTypes } from "../charactersTypes";
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: "app-characters",
   standalone: true,
-  imports: [CommonModule],
+  host: {  class: "container"},
+  imports: [CommonModule, HeaderComponent],
   templateUrl: "./character-list.component.html",
-  styleUrls: ["./character-list.component.css"],
+  styleUrls: ["./character-list.component.scss"],
 
 })
 
