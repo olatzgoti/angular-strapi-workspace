@@ -5,9 +5,11 @@ import { HeaderComponent } from "./header/header.component";
 import { HomeComponent } from './home/home.component';
 import { FilmListComponent } from './film-list/film-list.component';
 import { CharacterListComponent } from './character-list/character-list.component';
+import { CreateButtonComponent } from './create-button/create-button.component';
+import { CreateFilmComponent } from './create-film/create-film.component';
 
 @Component({
-  imports: [RouterModule, HeaderComponent, HomeComponent, FilmListComponent, CharacterListComponent, NgIf],
+  imports: [RouterModule, HeaderComponent, HomeComponent, FilmListComponent, CharacterListComponent, NgIf, CreateButtonComponent, CreateFilmComponent],
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',

@@ -1,15 +1,19 @@
-
 <router-outlet></router-outlet>
-<nav>
-  <a class="button" routerLink="/films">Films</a>
-  <a class="button" routerLink="/characters">Characters</a>
-</nav>
-<div class="message">
-  <h1 *ngIf="currentRoute === ''">
-   Bienvenida a nuestra aplicación.
-  </h1>
-  <h1 *ngIf="currentRoute === '/films'">Estás en la página de Films</h1>
-  <h1 *ngIf="currentRoute === '/characters'">Estás en la página de Characters</h1>
+<div class="message contenedor">
+  <div>
+
+    <h1 *ngIf="currentRoute === ''" class="titulo-centrado">
+      Bienvenida a nuestra aplicación.
+    </h1>
+    <h1 *ngIf="currentRoute === '/films'" class='titulo-centrado'>Estás en la página de Films</h1>
+    <h1 *ngIf="currentRoute === '/characters'" class="titulo-centrado">Estás en la página de Characters</h1>
+  </div>
+  <div>
+    <nav>
+      <a class="button" routerLinkActive="activebutton" routerLink="/films">Films</a>
+      <a class="button" routerLinkActive="activebutton" routerLink="/characters">Characters</a>
+    </nav>
+  </div>
 
 </div>
 

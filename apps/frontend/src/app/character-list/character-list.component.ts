@@ -3,15 +3,16 @@ import { Component, OnInit, inject } from "@angular/core"
 import { DataService } from "../services/data.service";
 import { CharactersTypes } from "../charactersTypes";
 import { HeaderComponent } from "../header/header.component";
+import { CreateButtonComponent } from "../create-button/create-button.component";
+
 
 @Component({
   selector: "app-characters",
   standalone: true,
   host: {  class: "container"},
-  imports: [CommonModule, HeaderComponent],
+  imports: [CommonModule, HeaderComponent, CreateButtonComponent],
   templateUrl: "./character-list.component.html",
   styleUrls: ["./character-list.component.scss"],
-
 })
 
 export class CharacterListComponent implements OnInit {

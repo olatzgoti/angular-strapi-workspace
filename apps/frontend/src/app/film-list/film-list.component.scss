@@ -28,6 +28,12 @@ $gap: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  &:hover {
+    background-color: #ccc; // Cambia el color de fondo al pasar el mouse
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Agrega un efecto de sombra al pasar el mouse
+    transform: scale(1.1); // Aumenta el tamaño de la tarjeta al pasar el mouse
+    transition: all 0.3s ease-in-out; // Agrega una transición suave al efecto de hover
+  }
 
   .list-title {
     color: $title-color;
@@ -53,6 +59,50 @@ $gap: 1.5rem;
       border-radius: $border-radius;
     }
   }
+
+
+
+  $primary-color: #e92f48;
+  $primary-color-dark: darken($primary-color, 10%);
+  $primary-color-light: lighten($primary-color, 10%);
+  $text-color: #ccbcbc;
+  $border-radius: 5px;
+  $padding: 0.75rem 1.5rem;
+
+@mixin button-style($bg-color, $text-color, $hover-bg-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: $padding;
+  margin: 10px;
+  border-radius: $border-radius;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $hover-bg-color;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($bg-color, 0.5);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+.button {
+  @include button-style($primary-color, $text-color, $primary-color-dark);
+}
+
+
+
+
+
+
 }
 /*
 div{

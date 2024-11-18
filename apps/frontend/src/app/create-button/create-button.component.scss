@@ -1,16 +1,11 @@
-h1{
 
-color: blueviolet;
-text-decoration: underline;
-}
-$primary-color: #e92f48;
-$primary-color-dark: darken($primary-color, 10%);
-$primary-color-light: lighten($primary-color, 10%);
-$text-color: #ccbcbc;
-$border-radius: 5px;
-$padding: 0.75rem 1.5rem;
+  $primary-color: #e92f48;
+  $primary-color-dark: darken($primary-color, 10%);
+  $primary-color-light: lighten($primary-color, 10%);
+  $text-color: #ccbcbc;
+  $border-radius: 5px;
+  $padding: 0.75rem 1.5rem;
 
-// Mixin para estilo de botón
 @mixin button-style($bg-color, $text-color, $hover-bg-color) {
   background-color: $bg-color;
   color: $text-color;
@@ -35,32 +30,18 @@ $padding: 0.75rem 1.5rem;
     transform: scale(0.98);
   }
 }
-
-
 .button {
   @include button-style($primary-color, $text-color, $primary-color-dark);
 }
-nav {
-  display: flex;
-  gap: 1rem; // Espacio entre botones
 
- }
-
- .contenedor {
+.contenedor {
   display: flex;
   flex-direction: column;
   justify-content:space-around;
   align-items: center;
   margin-bottom: 1%;
+
   a{
     text-decoration: none;
   }
-}
-
-.titulo-centrado {
-  font-size: 24px;
-  font-weight: bold;
-  color: #5c5858;
-  text-decoration: none;
-
 }

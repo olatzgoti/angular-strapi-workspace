@@ -4,11 +4,11 @@ import { FilmExample } from '../filmTypes';
 import { inject, Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { HeaderComponent } from '../header/header.component';
-
+import { CreateButtonComponent } from '../create-button/create-button.component';
 @Component({
   selector: 'app-films',
   standalone: true,
-  imports: [ CommonModule, HeaderComponent ],
+  imports: [ CommonModule, HeaderComponent, CreateButtonComponent],
   templateUrl: './film-list.component.html',
   styleUrls: ['./film-list.component.scss'],
 })

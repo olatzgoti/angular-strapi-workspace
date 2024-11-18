@@ -1,6 +1,7 @@
 <app-header></app-header>
+<app-create-button [title]="'character'"></app-create-button>
 
-<div class="film-list-container">
+<div class="film-list-container container">
 
   <div class='film-card' *ngFor='let character of characters'>
     <h2 class='list-title'>{{ character.name }}</h2>
@@ -10,6 +11,9 @@
       <img src="http://localhost:1337{{ char.url }}"
       alt="Imagen de  character.title ">
     </div>
+
+    <button class="button">Update Character</button>
+    <button class="button">Delete Character</button>
   </div>
 </div>
 
