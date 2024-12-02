@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { FilmExample } from '../filmTypes';
 //import { HttpClient } from '@angular/common/http';
 import { inject, Component, OnInit } from '@angular/core';
@@ -14,7 +15,7 @@ import { CreateButtonComponent } from '../create-button/create-button.component'
 })
 export class FilmListComponent implements OnInit {
   dataService = inject(DataService);
-
+  router = inject(Router);
   films: FilmExample[] = [];
 
   ngOnInit() {
@@ -35,12 +36,36 @@ export class FilmListComponent implements OnInit {
       });
     }
   }
+  fetchFilmDetailData(documentId: string) {
+    this.router.navigate([`/films/${documentId}`]).catch(err => console.error(err));
+  /*   this.dataService.getFilmByDocumentId(documentId).subscribe((response) => {
+      console.log(response)
+    })
+    */
+
+  }
+
+
   inverseDate(date: string) {
     const parts = date.split('-');
     return `${parts[2]}-${parts[1]}-${parts[0]}`;
   }
+
+  toDelete(documentId: string) {
+    if (!documentId) {
+      console.error('documentId is null or undefined');
+      return;
+    }
+
+    this.dataService.deleteFilm(documentId).subscribe({
+      next: (response) => {
+        console.log(response);
+        this.router.navigate(['/']).catch(err => console.error(err));
+      },
+      error: (error) => {
+        console.error(error);
+      },
+    });
+  }
 }
-/* ngOnInit() {
-  this.router.events.subscribe (() =>
-    this.currentRoute = this.router.url
-  ) */
+

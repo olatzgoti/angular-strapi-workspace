@@ -43,20 +43,16 @@ export class CreateFilmComponent {
   }
 
   insertFilmForm = new FormGroup({
-
     title: new FormControl<string | null>(null),
     filmId: new FormControl<string | null>(null),
     image: new FormControl<File | null>(null),
-
   });
-
 
   insertCharacterForm = new FormGroup({
     name: new FormControl<string | null>(null),
     description: new FormControl<string | null>(null),
     image: new FormControl<File | null>(null),
   });
-
 
   onInsertFilm(){
     const insertFilmRequest = this.insertFilmForm.value;
@@ -83,20 +79,6 @@ onInsertCharacter(){
     }
   });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 

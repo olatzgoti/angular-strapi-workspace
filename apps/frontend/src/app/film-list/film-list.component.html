@@ -3,15 +3,20 @@
  <app-create-button [title]="'film'"></app-create-button>
 <div class='film-list-container'>
 
-  <div class='film-card' *ngFor='let film of films'>
-    <h2 class='list-title'>{{ film.title }}</h2>
+  <div class='film-card' *ngFor='let film of films' >
+
+
+    <h2 class='list-title' >{{ film.title }}</h2>
     <p class='list-description'> Id: {{ film.documentId }}</p>
     <p class="release-date">Estreno: {{ film.date }}</p>
     <div class="pic" *ngFor='let img of film.image'>
       <img src="http://localhost:1337{{ img.url }}"
-      alt="Imagen de  character.title ">
+      alt="Imagen de  character.title "
+
+      >
     </div>
-    <button class="button">Update Film</button>
-    <button class="button">Delete Film</button>
-    </div>
+    <button class="button" (click)="fetchFilmDetailData(film.documentId)">See details</button>
+    <button class="button" (click)='toDelete(film.documentId)'>Delete Film</button>
+  </div>
 </div>
+

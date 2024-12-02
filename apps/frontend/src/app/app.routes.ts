@@ -6,7 +6,9 @@ import { HeaderComponent } from './header/header.component';
 import { CreateButtonComponent } from './create-button/create-button.component';
 import { CreateFilmComponent } from './create-film/create-film.component';
 import { CreateCharacterComponent } from './create-character/create-character.component';
-
+import { NotFoundComponent } from './not-found/not-found.component';
+import { FilmDetailComponent } from './film-detail/film-detail.component';
+import { FilmUpdateComponent } from './film-update/film-update.component';
 export const appRoutes: Route[] = [
   {
     path: '',
@@ -34,7 +36,19 @@ export const appRoutes: Route[] = [
     path: 'characters/new',
     component: CreateCharacterComponent,
 
-  }
+  },
+  {
+    path: 'films/:documentId',
+    component: FilmDetailComponent,
+  },
+  {
+    path: 'films/update/:documentId',
+    component: FilmUpdateComponent,
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
+  },
  /*   {
     path: '**',
     redirectTo: 'films',

@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<div class="film-detail-container">
+<!-- <h1>film.title</h1> -->
+
+<!-- [formGroup]="insertUpdateFilmForm" -->
+  <form (ngSubmit)="updateFilmForm(film.documentId ?? '', insertUpdateFilmForm.value)">
+    <h2>Create</h2>
+
+  <!--   <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" name="title" formControlName="title" value="{{film.title}}" placeholder="Enter the title of the film">
+    </div>
+    <div class="form-group">
+      <label for="filmId">FilmId</label>
+      <input type="text" name="filmId" formControlName="filmId" value="{{film.filmId}}" placeholder="Enter the id of the film">
+    </div>
+    <div class="form-group">
+      <label for="filmId">Date</label>
+      <input type="date" name="filmId" formControlName="filmId" value='{{film.date}}' placeholder="Enter the id of the film">
+    </div>
+    <div class="form-group">
+      <label for="image">Imagen</label>
+      <input type="file" accept="'image/*'" name="image" formControlName="image">
+    </div> -->
+
+    <button type="submit" class="btn-submit">Send data</button>
+  </form>
+
+</div>

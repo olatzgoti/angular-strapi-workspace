@@ -1,0 +1,89 @@
+$background-color: #f9f9f9;
+$border-color: #ddd;
+$text-color: #333;
+$title-color: #3498db;
+$padding: 1rem;
+$border-radius: 8px;
+$shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$gap: 1.5rem;
+
+
+.film-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .list-title {
+    margin-top: 150px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: $title-color;
+
+
+  }
+
+  .list-description {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .release-date, .created-at, .published-at {
+    font-size: 16px;
+    color: #999;
+    margin-bottom: 10px;
+  }
+
+  .pic {
+    width: 100%;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 500px;
+      height: 500px;
+      height: 80%; // Agrega esta propiedad
+      object-fit: contain;
+      border-radius: 10px;
+    }
+  }
+
+  .button {
+    width: 40%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #3e8e41;
+    }
+  }
+}
+.pic img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Centrar la tarjeta en la pantalla */
+.film-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

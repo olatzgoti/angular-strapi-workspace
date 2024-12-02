@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+@if (film)
+{
+
+  <div class="film-detail-container">
+    <!-- <h1>film.title</h1> -->
+
+    <div class='film-card' >
+
+      <h2 class='list-title'>{{ film.title }}</h2>
+      <p class='list-description'> Id: {{ film.documentId }}</p>
+      <p class="release-date">Estreno: {{ film.date }}</p>
+      <p class="created-at">Created at: {{ film.createdAt }}</p>
+      <p class="published-at">Published at: {{ film.publishedAt }}</p>
+    <div class="pic" *ngFor='let img of film?.image'>
+        <img src="http://localhost:1337{{ img.url }}"
+        alt="Imagen de  character.title ">
+      </div>
+      <button class="button" (click)="toUpdate(film.documentId ?? '')">Update Film</button>
+      <!-- <button class="button" (click)='toDelete(film.documentId)'>Delete Film</button> -->
+    </div>
+
+  </div>
+
+}

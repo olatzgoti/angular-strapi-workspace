@@ -14,18 +14,23 @@ export class DataService {
     return this.http.get(`${this.apiUrl}/films?populate=*`);
   }
 
+  getFilmByDocumentId(documentId: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/films/${documentId}?populate=*`);
+  }
+
   getCharacterItems(): Observable<any>{
     return this.http.get(`${this.apiUrl}/characters?populate=*`);
   }
 
   createFilm(data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/films`, { data });
+    return this.http.post(`${this.apiUrl}/films`, {data});
   }
-  updateFilm(id: number, data: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/films/${id}`, data);
+  updateFilm(documentId: string, data: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/films/${documentId}`, {data});
   }
-  deleteFilm(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/films/${id}`);
+
+  deleteFilm(documentId: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/films/${documentId}`);
   }
 
 
@@ -33,11 +38,11 @@ export class DataService {
     return this.http.post(`${this.apiUrl}/characters`, {data});
   }
 
-  updateCharacter(id: number, data: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/characters/${id}`, data);
+  updateCharacter(documentId: string, data: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/characters/${documentId}`, {data});
   }
 
- deleteCharacter(id: number): Observable<any> {
-   return this.http.delete(`${this.apiUrl}/characters/${id}`);
+ deleteCharacter(documentId: string): Observable<any> {
+   return this.http.delete(`${this.apiUrl}/characters/${documentId}`);
   }
 }

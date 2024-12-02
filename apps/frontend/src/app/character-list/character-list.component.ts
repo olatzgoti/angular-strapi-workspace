@@ -31,9 +31,26 @@ export class CharacterListComponent implements OnInit {
           id: item.id,
           name: item.name,
           description: item.description,
+          documentId: item.documentId,
           image: Array.isArray(item.image) ? item.image : [item.image],
         }));
     });
     }
   }
+
+  toDelete(documentId: string) {
+    this.dataService.deleteCharacter(documentId).subscribe((response) => {
+      console.log(response)
+    })
+
+  }
+
+  /*
+  toUpdate(documentId: string), data: any {
+    this.dataService.updateCharacter(documentId).subscribe((response) => {
+      console.log(response)
+    })
+  }
+  */
+
 }
